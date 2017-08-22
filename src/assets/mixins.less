@@ -1,0 +1,26 @@
+.px2px(@name, @px) {
+    @{name}: round(@px / 2) * 1px;
+
+    [data-dpr="2"] & {
+        @{name}: @px * 1px;
+    }
+
+    [data-dpr="3"] & {
+        @{name}: round(@px / 2 * 3) * 1px;
+    }
+}
+
+//字体只按分辨率适配
+// font-size 统一处以2
+.font-size-dpr(@px) {
+    font-size: round(@px / 2) * 1px;
+}
+
+//retina border 1px
+.retina-one-px() {
+    @supports (border-width: 0.5px) {
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 3) {
+            border-width: 0.5px;
+        }
+    }
+}

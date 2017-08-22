@@ -1,0 +1,45 @@
+@import "../../assets/base";
+
+@iconSize: px2rem(260px);
+@btnHeight: px2rem(160px);
+
+body {
+    font-size: 14px !important;
+}
+
+.houseTips {
+    width: 100%;
+    height: 100%;
+    font-family: PingFangSC-Regular, "微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+.houseTips_icon {
+    margin: px2rem(160px) auto px2rem(70px);
+    width: @iconSize;
+    height: @iconSize;
+    //background: url("icon_illegal@2x.png");
+    background-size: cover;
+}
+
+.houseTips_desc {
+    margin: 0 auto;
+    width: px2rem(560px);
+    line-height: px2rem(46px);
+    color: #4a4a4a;
+    text-align: center;
+    .font-size-dpr(28px);
+}
+
+.houseTips_btn {
+    display: block;
+    text-decoration: none;
+    margin: px2rem(44px) auto 0;
+    width: px2rem(320px);
+    height: px2rem(80px);
+    line-height: px2rem(80px);
+    border: px2rem(1px) solid #ff552e;
+    border-radius: px2rem(2px);
+    color: #ff552e;
+    text-align: center;
+    .font-size-dpr(30px);
+}

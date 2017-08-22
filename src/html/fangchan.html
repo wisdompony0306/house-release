@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <title>厂房</title>
+    <script type="text/javascript">
+    !function (a, b) {
+        function c() {
+            var b = f.getBoundingClientRect().width;
+            b / i > 540 && (b = 540 * i);
+            var c = b / 10;
+            f.style.fontSize = c + "px", k.rem = a.rem = c
+        }
+
+        var d, e = a.document, f = e.documentElement, g = e.querySelector('meta[name="viewport"]'), h = e.querySelector('meta[name="flexible"]'), i = 0, j = 0, k = b.flexible || (b.flexible = {});
+        if (g) {
+            console.warn("将根据已有的meta标签来设置缩放比例");
+            var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+            l && (j = parseFloat(l[1]), i = parseInt(1 / j))
+        } else if (h) {
+            var m = h.getAttribute("content");
+            if (m) {
+                var n = m.match(/initial\-dpr=([\d\.]+)/), o = m.match(/maximum\-dpr=([\d\.]+)/);
+                n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2)))
+            }
+        }
+        if (!i && !j) {
+            var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)), q = a.devicePixelRatio;
+            i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i
+        }
+        if (f.setAttribute("data-dpr", i), !g)if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild)f.firstElementChild.appendChild(g); else {
+            var r = e.createElement("div");
+            r.appendChild(g), e.write(r.innerHTML)
+        }
+        a.addEventListener("resize", function () {
+            clearTimeout(d), d = setTimeout(c, 300)
+        }, !1), a.addEventListener("pageshow", function (a) {
+            a.persisted && (clearTimeout(d), d = setTimeout(c, 300))
+        }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () {
+            e.body.style.fontSize = 12 * i + "px"
+        }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) {
+            var b = parseFloat(a) * this.rem;
+            return "string" == typeof a && a.match(/rem$/) && (b += "px"), b
+        }, k.px2rem = function (a) {
+            var b = parseFloat(a) / this.rem;
+            return "string" == typeof a && a.match(/px$/) && (b += "rem"), b
+        }
+    }(window, window.lib || (window.lib = {}));
+    </script>
+    <!-- 后端变量-->
+    <script type="text/javascript">
+
+        window.pageData = {
+
+            // 单元参数
+            // 没有默认选项时将第一个选项选中
+            dataSrc: {
+                "type": {
+                    "paramname": "type",
+                    "title": "类型",
+                    "option": [
+                        {"value": "4", "text": "出售"},
+                        {"value": "1", "text": "求租"},
+                        {"value": "2", "text": "转让", "selected": "true"},
+                        {"value": "3", "text": "求购"},
+                        {"value": "0", "text": "出租"}
+                    ]
+                },
+                "danwei": {
+                    "paramname": "danwei",
+                    "title": "单位",
+                    "option": [
+                        {"text": "元/月", "value": "3"},
+                        {"text": "元/㎡/天", "value": "1", "selected": "true"}
+                    ]
+                },
+                "isBiz": {
+                    "paramname": "isBiz",
+                    "title": "身份",
+                    "option": [
+                        {"text": "个人", "value": "0", "selected": "true"},
+                        {"text": "中介", "value": "1"}
+                    ]
+                },
+                "ObjectType": {
+                    "paramname": "ObjectType", // 表单字段名
+                    "title": "类别", // 在选择列表页显示的title
+                    "option": [
+                        {"text": "厂房", "value": "5"}, // 选中项
+                        {"text": "仓库", "value": "1"},
+                        {"text": "车位", "value": "2"},
+                        {"text": "土地", "value": "3"},
+                        {"text": "其他", "value": "4"},
+                    ],
+                }
+            },
+            initData: {
+                userid: '', // 用户id,如果用户未登录传空字符串
+                refabu: '',
+                platform: '',
+                ppu: '',
+                operate: 'post', // 操作类型：新增post、草稿draft、编辑edit、重新发布refabu
+            },
+
+            // 与业务有关的数据,对应原extMap字段
+            extData: {
+                isBizDisable: 0, // isBiz字段是否被禁用
+                wkLimitPost: true, // 孙悟空发帖限制，提交时用到了
+                yinsiShowType: 0, //是否显示隐私保护字段
+                isadd: true,// 是否为新增，【修改】时为false
+                pageTips: '您今天还可免费发帖<b> 2 </b>条，本月还可免费发帖<b> 3 </b>条。',//对应模板中后端变量$!{tipContent},
+                localArea: {
+                    "text": "朝阳", //对应模板后端数据 $!localArea.getLocalName()
+                    "value": "1142" //对应模板后端数据 $!localArea.getDispLocalID()
+                },
+                localDiduan: {
+                    "text": "大山子",//对应模板后端数据 $!localDiduan.getLocalName()
+                    "value": "7551" //对应模板后端数据 $!localDiduan.getDispLocalID()
+                },
+                nearxiaoqu: {"quyu":[{"name":"", "value":"1142"},{"name":"", "value":"7551"}],"xiaoqu":[{"name":"隧道口宿舍", "id":"1042916", "address":"大道中新隆沙" }]},
+            },
+
+            json4fe: {
+                catentry: [{
+                    "dispid": "1",
+                    "name": "房产信息",
+                    "listname": "house"
+                }, {
+                    "dispid": "15",
+                    "name": "厂房/仓库/土地/车位",
+                    "listname": "fangchan"
+                }],
+                locallist: [{
+                    "dispid":"1",
+                    "name":"北京",
+                    "listname":"bj"
+                }],
+                modules: 'post',
+                isqqbind: '0'
+            },
+
+            // 页面类型为修改时，用于填充页面内容的信息。页面类型不为修改时无此字段
+            infoParamJson: [
+                {"paraname": "Phone", "value": "18721784561"},
+                {"paraname": "Title", "value": "大山子 地段 厂房 9平米 "},
+                {"paraname": "diduan", "value": "地段"},
+                {"paraname": "minPrice", "value": "80000"},
+                {"paraname": "area", "value": "9"},
+                {"paraname": "goblianxiren", "value": "测测"},
+
+                {
+                    "paraname": "localArea", "value": "1142", "text": "朝阳",
+                    "children": [{"paraname": "localDiduan", "value": "7551", "text": "大山子"}]
+                },
+                {"paraname": "danwei", "text": "元月", "value": "3"},
+                {"paraname": "ObjectType", "text": "仓库", "value": "1"},
+                {"paraname": "isBiz", "value": "1"},
+                {"paraname": "Content", "value": "<span>span标签内的content信息</span>"},
+
+                {"paraname": "Pic", "value": ""},
+                {
+                    "paraname": "gobquzhi",
+                    "value": "objecttype=%E5%8E%82%E6%88%BF&amp;danwei=%E5%85%83%2F%E3%8E%A1%2F%E5%A4%A9&amp;type=%E5%87%BA%E7%A7%9F"
+                },
+                {"paraname": "postsourceid", "value": "14000001"},
+                {"paraname": "type", "text": "出售", "value": "4"},
+                {"paraname": "gobsunwukong", "value": "1"},
+                {"paraname": "gobcookieid", "value": "c5/njFkK9J2PmbViAxxGAg"},
+                {"paraname": "goblastEditClient", "value": "14000001"},
+                {"paraname": "gobindexeffectivedate", "value": "2017-09-05 14:29:05"},
+                {"paraname": "gobPostStatParam", "value": ""},
+                {"paraname": "category", "value": "15"}
+            ],
+        };
+    </script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/javascript" charset="utf-8" src="//a.58cdn.com.cn/app58/rms/app/js/app_20264.js?cachevers=523"></script>
+
+</body>
+</html>
