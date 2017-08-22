@@ -11,7 +11,7 @@
 ## 项目安装与运行
 
 ```
-   
+    项目下载：https://github.com/wisdompony0306/house-release.git
     yarn #或yarn install
     
     npm run build
