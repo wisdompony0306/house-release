@@ -11,7 +11,7 @@
 ## 项目安装与运行
 
 ```
-    git clone -b dev git@gitlab.58corp.com:fangfe/fang-release.git fang-release-dev
+   
     yarn #或yarn install
     
     npm run build
