@@ -1,0 +1,50 @@
+@import '../../asset/base.less';
+@import "../../asset/const.less";
+
+.agreementBox {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  .desc {
+    overflow: auto;
+    font-size: px2rem(28px);
+    line-height: px2rem(48px);
+    padding: px2rem(40px) px2rem(50px);
+    height: 86.5vh;
+    position: absolute;
+    color: #666;
+    top: 0;
+    left: 0;
+    font-size: px2rem(34px);
+  }
+  .submitBtn {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+    color: #FFFFFF;
+    height: px2rem(90px);
+    background-color: #D3D4D9;
+    font-size: px2rem(34px);
+    line-height: px2rem(90px);
+    span {
+      font-size: @fontsize24;
+      color: #FFFFFF;
+    }
+  }
+  .endTime {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+    height: px2rem(90px);
+    line-height: px2rem(90px);
+    background: #FF552E;
+    font-size: px2rem(34px);
+  }
+}
