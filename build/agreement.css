@@ -1,0 +1,190 @@
+
+@charset "utf-8";
+html {
+  color: #000;
+  background: #fff;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+html * {
+  outline: 0;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-family: 'PingFang SC Regular', 'microsoft yahei', sans-serif, 'Helvetica Neue';
+  font-size: 12px;
+  -webkit-user-select: none;
+  user-select: none;
+  background: #fff;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+del {
+  text-decoration: line-through;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var,
+i {
+  font-style: normal;
+  font-weight: 500;
+}
+ol,
+ul {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+q:before,
+q:after {
+  content: '';
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+ins,
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+.stopPageScroll {
+  height: 100vh;
+  overflow: hidden;
+}
+.agreementBox {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.agreementBox .desc {
+  overflow: auto;
+  font-size: 0.37333333333333335rem;
+  line-height: 0.64rem;
+  padding: 0.5333333333333333rem 0.6666666666666666rem;
+  height: 86.5vh;
+  position: absolute;
+  color: #666;
+  top: 0;
+  left: 0;
+  font-size: 0.4533333333333333rem;
+}
+.agreementBox .submitBtn {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  color: #FFFFFF;
+  height: 1.2rem;
+  background-color: #D3D4D9;
+  font-size: 0.4533333333333333rem;
+  line-height: 1.2rem;
+}
+.agreementBox .submitBtn span {
+  font-size: 0.32rem;
+  color: #FFFFFF;
+}
+.agreementBox .endTime {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  background: #FF552E;
+  font-size: 0.4533333333333333rem;
+}
